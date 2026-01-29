@@ -1,6 +1,12 @@
 name: Super-Linter
 
-on: push
+on:
+  push:
+
+permissions:
+  contents: read
+  statuses: write
+  checks: write
 
 jobs:
   super-lint:
@@ -9,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run Super-Linter
         uses: super-linter/super-linter@v6
